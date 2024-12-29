@@ -4,34 +4,39 @@
   background-color: #fff;
   width: 100dvw;
   height: 100dvh;
-}
-.left {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.right {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.right h1 {
-  font-weight: bold;
-  font-size: 64px;
-  margin: 48px 0;
-}
-.right h2 {
-  font-weight: bold;
-  font-size: 31px;
-  margin-bottom: 32px;
-}
-.right h3 {
-  font-weight: bold;
-  font-size: 17px;
-  margin-bottom: 20px;
-  margin-top: 40px;
+
+  .left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+      font-weight: bold;
+      font-size: 64px;
+      margin: 48px 0;
+    }
+
+    h2 {
+      font-weight: bold;
+      font-size: 31px;
+      margin-bottom: 32px;
+    }
+
+    h3 {
+      font-weight: bold;
+      font-size: 17px;
+      margin-bottom: 20px;
+      margin-top: 40px;
+    }
+  }
 }
 
 .signup {
@@ -46,10 +51,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  &:hover {
+    background-color: rgb(26, 140, 216);
+  }
 }
-.signup:hover {
-  background-color: rgb(26, 140, 216);
-}
+
 .login {
   width: 300px;
   height: 40px;
@@ -61,7 +68,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.login:hover {
-  background-color: rgba(29, 155, 240, 0.1);
+
+  &:hover {
+    background-color: rgba(29, 155, 240, 0.1);
+  }
 }
