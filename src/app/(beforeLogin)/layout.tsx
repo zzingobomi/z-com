@@ -1,9 +1,16 @@
 import { ReactNode } from "react";
+import styles from "@/app/page.module.scss";
 
-export default async function BeforeLoginLayout({
-  children,
-}: {
+type Props = {
   children: ReactNode;
-}) {
-  return <div>{children}</div>;
+  modal: ReactNode;
+};
+
+export default async function Layout({ children, modal }: Props) {
+  return (
+    <div className={styles.container}>
+      {children}
+      {modal}
+    </div>
+  );
 }
