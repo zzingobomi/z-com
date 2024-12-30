@@ -10,6 +10,8 @@
     "build:clean": "rm -rf .next && next build"
   },
   "dependencies": {
+    "classnames": "^2.5.1",
+    "dayjs": "^1.11.13",
     "next": "15.1.3",
     "normalize.css": "^8.0.1",
     "react": "^19.0.0",
