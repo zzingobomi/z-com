@@ -9,10 +9,16 @@
   left: 0;
   right: 0;
   bottom: 0;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: rgba(91, 112, 131, 0.4);
+  }
 }
 
 .modal {
-  background: #ffffff;
+  background: rgb(
+    var(--background-end-rgb)
+  ); /* You can update this variable as needed */
   position: relative;
   top: 5%;
   max-width: 80vw;
@@ -37,6 +43,10 @@
   .modalBody {
     flex: 1;
     padding: 0 80px;
+  }
+
+  .modalFooter {
+    padding: 24px 80px;
   }
 
   .inputDiv {
@@ -71,10 +81,6 @@
       padding: 12px 8px 8px;
       outline: none;
     }
-  }
-
-  .modalFooter {
-    padding: 24px 80px;
   }
 
   .actionButton {
@@ -113,5 +119,31 @@
     &:hover {
       background-color: rgba(15, 20, 25, 0.1);
     }
+
+    @media (prefers-color-scheme: dark) {
+      background-color: black;
+
+      svg {
+        fill: white;
+      }
+    }
+  }
+}
+
+@media all and (min-width: 687px) {
+  .modal {
+    top: 5%;
+    min-width: 600px;
+    max-width: 600px;
+    height: 450px;
+    padding: 0;
+  }
+
+  .modalHeader {
+    padding: 36px 80px 20px;
+  }
+
+  .modalBody {
+    padding: 0 80px;
   }
 }

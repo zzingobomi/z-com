@@ -69,10 +69,102 @@
       }
 
       .postImageSection {
-        img {
-          margin-top: 12px;
-          width: 100%;
-          border-radius: 16px;
+        display: inline-block;
+        margin-top: 12px;
+        width: 100%;
+        border-radius: 16px;
+
+        &.oneImage {
+          max-height: 510px;
+          background-repeat: no-repeat;
+
+          img {
+            border-radius: 16px;
+            max-height: 510px;
+            width: 100%;
+          }
+        }
+
+        &.twoImage {
+          height: 272px;
+          display: flex;
+          flex-direction: row;
+          gap: 2px;
+
+          a {
+            flex: 1;
+
+            &:first-child {
+              border-top-left-radius: 16px;
+              border-bottom-left-radius: 16px;
+            }
+
+            &:last-child {
+              border-top-right-radius: 16px;
+              border-bottom-right-radius: 16px;
+            }
+          }
+        }
+
+        &.threeImage {
+          height: 272px;
+          display: flex;
+          flex-direction: row;
+          gap: 2px;
+
+          > a,
+          > div {
+            flex: 1;
+          }
+
+          > div {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+
+            > a {
+              flex: 1;
+
+              &:first-child {
+                border-top-right-radius: 16px;
+              }
+
+              &:last-child {
+                border-bottom-right-radius: 16px;
+              }
+            }
+          }
+
+          > a:first-child {
+            border-top-left-radius: 16px;
+            border-bottom-left-radius: 16px;
+          }
+        }
+
+        &.fourImage {
+          height: 272px;
+          display: grid;
+          grid-template-rows: 1fr 1fr;
+          grid-template-columns: 1fr 1fr;
+          gap: 2px;
+
+          > a {
+            &:nth-child(1) {
+              border-top-left-radius: 16px;
+            }
+
+            &:nth-child(2) {
+              border-top-right-radius: 16px;
+            }
+
+            &:nth-child(3) {
+              border-bottom-left-radius: 16px;
+            }
+
+            &:nth-child(4) {
+              border-bottom-right-radius: 16px;
+            }
+          }
         }
       }
     }
@@ -137,6 +229,12 @@
     &:hover .count {
       color: rgb(29, 155, 240);
     }
+
+    &.white svg,
+    &.white .count {
+      fill: white;
+      color: white;
+    }
   }
 
   .repostButton {
@@ -157,6 +255,12 @@
     &:hover .count {
       color: rgb(11, 175, 123);
     }
+
+    &.white svg,
+    &.white .count {
+      fill: white;
+      color: white;
+    }
   }
 
   .heartButton {
@@ -176,6 +280,12 @@
     &.liked .count,
     &:hover .count {
       color: rgb(228, 34, 126);
+    }
+
+    &.white svg,
+    &.white .count {
+      fill: white;
+      color: white;
     }
   }
 }

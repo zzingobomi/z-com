@@ -10,8 +10,13 @@
   }
 
   > div {
-    margin-left: 20px;
-    margin-right: 16px;
-    font-size: 20px;
+    display: none;
+
+    @media all and (min-width: 1300px) {
+      margin-left: 20px;
+      margin-right: 16px;
+      font-size: 20px;
+      display: inline-block;
+    }
   }
 }

@@ -9,10 +9,14 @@
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.4);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: rgba(91, 112, 131, 0.4);
+  }
 }
 
 .modal {
-  background: #ffffff;
+  background: rgb(var(--background-end-rgb));
   position: relative;
   top: 5%;
   max-width: 80vw;
@@ -42,6 +46,18 @@
   .modalFooter {
     padding: 24px 80px;
   }
+
+  // @media all and (min-width: 687px) {
+  //   min-width: 600px;
+  //   max-width: 600px;
+  //   height: 550px;
+  //   padding: 0;
+
+  //   .modalHeader,
+  //   .modalBody {
+  //     padding: px 80px;
+  //   }
+  // }
 }
 
 .inputDiv {
@@ -85,9 +101,15 @@
   background-color: rgb(15, 20, 25);
   color: white;
   font-size: 17px;
+  border: none;
+  cursor: pointer;
 
   &:disabled {
     opacity: 0.5;
+
+    &:hover {
+      background-color: rgb(15, 20, 25);
+    }
   }
 
   &:hover {
@@ -111,5 +133,17 @@
 
   &:hover {
     background-color: rgba(15, 20, 25, 0.1);
+  }
+
+  @media all and (min-width: 687px) {
+    left: 16px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: black;
+
+    svg {
+      fill: white;
+    }
   }
 }

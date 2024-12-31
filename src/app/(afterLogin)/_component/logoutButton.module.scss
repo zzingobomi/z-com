@@ -1,5 +1,5 @@
 .logOutButton {
-  width: 258px;
+  width: 66px;
   height: 66px;
   padding: 12px;
   display: flex;
@@ -14,6 +14,10 @@
     background-color: rgba(15, 20, 25, 0.1);
     border-radius: 33px;
   }
+
+  @media all and (min-width: 1300px) {
+    width: 258px;
+  }
 }
 
 .logOutUserImage {
@@ -27,9 +31,14 @@
 }
 
 .logOutUserName {
-  margin: 0 12px;
+  display: none;
 
-  > div:first-child {
-    font-weight: bold;
+  @media all and (min-width: 1300px) {
+    display: inline-block;
+    margin: 0 12px;
+
+    > div:first-child {
+      font-weight: bold;
+    }
   }
 }

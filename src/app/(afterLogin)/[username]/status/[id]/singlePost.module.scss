@@ -8,12 +8,4 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
-
-  @media all and (min-width: 687px) {
-    width: 600px;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    border-color: rgb(47, 51, 54);
-  }
 }
