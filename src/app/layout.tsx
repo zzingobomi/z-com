@@ -1,7 +1,16 @@
 import { ReactNode } from "react";
 import { Inter } from "next/font/google";
 import { Metadata } from "next";
+import { MSWProvider } from "@/app/_component/MSWComponent";
 import "./globals.css";
+
+if (
+  process.env.NEXT_RUNTIME === "nodejs" &&
+  process.env.NODE_ENV !== "production"
+) {
+  const { server } = require("@/mocks/http");
+  server.listen();
+}
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +27,7 @@ export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div>{children}</div>
+        <MSWProvider>{children}</MSWProvider>
       </body>
     </html>
   );
