@@ -1,18 +1,16 @@
 "use client";
 
+import { User } from "@/model/User";
 import style from "./followRecommend.module.scss";
+import { MouseEventHandler } from "react";
+import Link from "next/link";
 
-export default function FollowRecommend() {
-  const user = {
-    id: "elonmusk",
-    nickname: "Elon Musk",
-    image: "/yRsRRjGO.jpg",
-  };
-
-  const onFollow = () => {};
+type Props = { user: User };
+export default function FollowRecommend({ user }: Props) {
+  const onFollow: MouseEventHandler<HTMLButtonElement> = (e) => {};
 
   return (
-    <div className={style.container}>
+    <Link href={`/${user.id}`} className={style.container}>
       <div className={style.userLogoSection}>
         <div className={style.userLogo}>
           <img src={user.image} alt={user.id} />
@@ -25,6 +23,6 @@ export default function FollowRecommend() {
       <div className={style.followButtonSection}>
         <button onClick={onFollow}>팔로우</button>
       </div>
-    </div>
+    </Link>
   );
 }
