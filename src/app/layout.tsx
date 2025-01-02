@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { Metadata } from "next";
 import { MSWProvider } from "@/app/_component/MSWComponent";
 import "./globals.css";
+import AuthSession from "./_component/AuthSession";
 
 if (
   process.env.NEXT_RUNTIME === "nodejs" &&
@@ -27,7 +28,9 @@ export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <MSWProvider>{children}</MSWProvider>
+        <MSWProvider>
+          <AuthSession>{children}</AuthSession>
+        </MSWProvider>
       </body>
     </html>
   );
