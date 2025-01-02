@@ -17,6 +17,7 @@ const eslintConfig = [
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-require-imports": "off",
       "@typescript-eslint/ban-ts-comment": "off",
+      "@typescript-eslint/no-wrapper-object-types": "off",
       "import/no-anonymous-default-export": "off",
     },
   },

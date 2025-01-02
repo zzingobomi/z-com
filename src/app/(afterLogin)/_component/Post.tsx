@@ -7,32 +7,24 @@ import ActionButtons from "./ActionButtons";
 import PostArticle from "./PostArticle";
 import PostImages from "./PostImages";
 import { faker } from "@faker-js/faker";
+import type { Post } from "@/model/Post";
 
 dayjs.locale("ko");
 dayjs.extend(relativeTime);
 
-type Props = { noImage?: boolean };
+type Props = { noImage?: boolean; post: Post };
 
-export default function Post({ noImage }: Props) {
-  const target = {
-    postId: 1,
-    User: {
-      id: "elonmusk",
-      nickname: "Elon Musk",
-      image: "/yRsRRjGO.jpg",
-    },
-    content: "귀여운 승연이",
-    createdAt: new Date(),
-    Images: [] as any[],
-  };
-  if (Math.random() > 0.5 && !noImage) {
-    target.Images.push(
-      { imageId: 1, link: faker.image.urlLoremFlickr() }
-      //{ imageId: 2, link: faker.image.urlLoremFlickr() },
-      //{ imageId: 3, link: faker.image.urlLoremFlickr() },
-      //{ imageId: 4, link: faker.image.urlLoremFlickr() }
-    );
-  }
+export default function Post({ noImage, post }: Props) {
+  const target = post;
+
+  // if (Math.random() > 0.5 && !noImage) {
+  //   target.Images.push(
+  //     { imageId: 1, link: faker.image.urlLoremFlickr() },
+  //     { imageId: 2, link: faker.image.urlLoremFlickr() },
+  //     { imageId: 3, link: faker.image.urlLoremFlickr() },
+  //     { imageId: 4, link: faker.image.urlLoremFlickr() }
+  //   );
+  // }
 
   return (
     <PostArticle post={target}>
