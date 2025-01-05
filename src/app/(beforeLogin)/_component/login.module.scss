@@ -130,6 +130,13 @@
   }
 }
 
+.message {
+  color: red;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+
 @media all and (min-width: 687px) {
   .modal {
     top: 5%;

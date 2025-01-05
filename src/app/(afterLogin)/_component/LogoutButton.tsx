@@ -3,10 +3,14 @@
 import { useRouter } from "next/navigation";
 import style from "./logoutButton.module.scss";
 import { signOut, useSession } from "next-auth/react";
+import { Session } from "next-auth";
 
-export default function LogoutButton() {
+type Props = {
+  me: Session | null;
+};
+
+export default function LogoutButton({ me }: Props) {
   const router = useRouter();
-  const { data: me } = useSession();
 
   const onLogout = () => {
     signOut({ redirect: false }).then(() => {
@@ -15,6 +19,8 @@ export default function LogoutButton() {
   };
 
   if (!me?.user) return null;
+
+  console.log(me);
 
   return (
     <button className={style.logOutButton} onClick={onLogout}>

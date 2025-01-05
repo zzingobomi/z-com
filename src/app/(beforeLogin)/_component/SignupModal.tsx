@@ -18,8 +18,10 @@ function showMessage(message: string | null | undefined) {
       return "프로필 사진을 등록해주세요.";
     case "user_exists":
       return "이미 존재하는 계정입니다.";
+    case "nickname must be a string":
+      return "닉네임이 필요합니다.";
     default:
-      return "";
+      return message;
   }
 }
 
@@ -47,6 +49,7 @@ export default function SignupModal() {
                 type="text"
                 placeholder=""
                 required
+                defaultValue={state.id as string}
               />
             </div>
             <div className={style.inputDiv}>
@@ -60,6 +63,7 @@ export default function SignupModal() {
                 type="text"
                 placeholder=""
                 required
+                defaultValue={state.nickname as string}
               />
             </div>
             <div className={style.inputDiv}>
@@ -73,6 +77,7 @@ export default function SignupModal() {
                 type="password"
                 placeholder=""
                 required
+                defaultValue={state.password as string}
               />
             </div>
             <div className={style.inputDiv}>
@@ -86,6 +91,7 @@ export default function SignupModal() {
                 type="file"
                 accept="image/*"
                 required
+                defaultValue={state.image as string}
               />
             </div>
           </div>

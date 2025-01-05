@@ -24,6 +24,13 @@ export default function LoginModal() {
       });
 
       console.log(result);
+
+      if (result?.code === "no_user") {
+        setMessage("존재하지 않는 아이디입니다.");
+      } else if (result?.code === "wrong_password") {
+        setMessage("비밀번호가 일치하지 않습니다.");
+      }
+
       router.replace("/home");
     } catch (error) {
       console.error(error);

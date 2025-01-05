@@ -1,11 +1,12 @@
 export async function getFollowingPosts() {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/followingPosts`,
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/posts/followings`,
     {
       next: {
         tags: ["posts", "followings"],
       },
-      //cache: "force-cache",
+      credentials: "include",
+      cache: "force-cache",
     }
   );
 
